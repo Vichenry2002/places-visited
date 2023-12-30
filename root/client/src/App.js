@@ -1,24 +1,16 @@
-import {useEffect, useState} from "react";
-const API_URL = process.env.REACT_APP_API;
+import { Route, Routes } from "react-router-dom";
+import { Login, Signup } from "./pages";
+import Home from "./pages/Home";
 
 function App() {
-  const [data, setData] = useState("No data :(");
-  
-  useEffect(() => {
-    async function getData() {
-      const url = `${API_URL}/hello`;
-      const response = await fetch(url);
-      const data = await response.json();
-      setData(data.msg);
-    }
-    getData();
-  }, []); 
-
   return (
-    <>
-      <h1>MERN App!</h1>
-      <p>Data from server: {data}</p>
-    </>
+    <div className="App">
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/login" element={<Login />} />
+        <Route path="/signup" element={<Signup />} />
+      </Routes>
+    </div>
   );
 }
 
