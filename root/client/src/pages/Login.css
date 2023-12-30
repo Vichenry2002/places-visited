@@ -1,0 +1,57 @@
+.login-container {
+    display: flex;
+    flex-direction: column;
+
+  }
+
+  .content-container {
+    display: flex;
+    justify-content: center;
+    align-items: center; /* This will vertically center the items */
+    gap: 20px; /* Adjust the gap between globe and form as needed */
+
+  }
+  
+
+  .globe-container{
+    flex: 1;
+    margin: 10px;
+    margin-right: 300px;
+    max-width: 600px;
+  }
+
+  .globe-title {
+    font-family: 'Verdana';
+    color: #DDF2FD;
+    text-align: left;
+    margin-top: 100px;
+  }
+
+  .main-title{
+    font-size: 50px;
+  }
+
+  .form-logo {
+    align-items: center;
+    width: 100px; /* adjust as needed */
+    height: auto;
+    margin-bottom: -20px; 
+    margin-top: -20px; 
+    margin-left: 100px;
+  }
+
+  .top-left-logo {
+    width: 100px; /* Adjust the size as needed */
+    height: auto;
+    margin-right: 20px; /* Add some space between the logo and the title */
+    align-items: center;
+    margin-top: 75px;
+    margin-left: -150px;
+  }
+
+  .header-container {
+    display: flex;
+    align-items: center; /* This will vertically align items in this container */
+  }
+
+  
