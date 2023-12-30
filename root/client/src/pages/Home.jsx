@@ -3,6 +3,8 @@ import { useNavigate } from "react-router-dom";
 import { useCookies } from "react-cookie";
 import axios from "axios";
 import { ToastContainer, toast } from "react-toastify";
+import "./Home.css"; // Make sure to create this CSS file
+import Map from "./Map";
 
 const Home = () => {
   const navigate = useNavigate();
@@ -34,16 +36,26 @@ const Home = () => {
     removeCookie("token");
     navigate("/login");
   };
+
+
   return (
     <>
       <div className="home_page">
-        <h4>
-          {" "}
-          Welcome <span>{username}</span>
-        </h4>
-        <button onClick={Logout}>LOGOUT</button>
+        <div className="header">
+          <img src="/favicon.png" alt="Logo" className="form-logo" />
+          <h4>Welcome <span>{username}</span></h4>
+          <button onClick={Logout}>LOGOUT</button>
+        </div>
+
+          <div className="main-content">
+            <div className="map-section">
+              <Map></Map>
+            </div>
+            <div className="list-section">LIST IS HERE</div>
+          </div>
+
       </div>
-      
+
       <ToastContainer />
     </>
   );
