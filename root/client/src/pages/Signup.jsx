@@ -86,7 +86,7 @@ const Signup = () => {
         </div>
         <div className="form_container">
         <img src="/favicon.png" alt="Logo" className="form-logo" />
-          <h2>Signup</h2>
+          <h2>Sign Up</h2>
           <form onSubmit={handleSubmit}>
             <div>
               <label htmlFor="username">Username</label>

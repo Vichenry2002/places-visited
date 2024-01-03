@@ -38,7 +38,7 @@
   
   .map-section, .list-section {
     padding: 20px;
-    border: 1px solid #ccc;
+
   }
   
   .map-section {
@@ -50,7 +50,10 @@
   .list-section {
     margin-left: 10px;
     right: 0;
-    flex-grow:1;
+    min-width: 375px;
+    max-width: 375px;
+    /* min-height and max-height can be used similarly */
+    overflow: auto;
   }
   
   .home_page button {
@@ -67,3 +70,35 @@
   .home_page button:hover {
     background-color: rgba(0, 212, 255, 1);
   }
+
+  .continent-buttons {
+    margin-top: 10px;
+    padding: 0rem 0rem !important;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px;
+  }
+  
+  .continent-button {
+    padding: 0rem 1.5rem !important;
+    display: flex;
+    align-items: center;
+    gap: 1px;
+    padding: 1px 1px;
+    background-color: #b9d9eb !important;
+    color: white;
+    border: none;
+    border-radius: 1px;
+    cursor: pointer;
+  }
+  
+  .continent-button:hover {
+    background-color: #2d6686 !important;
+  }
+  
+  .continent-icon {
+    width: 60px;  /* Adjust size as needed */
+    height: auto;
+  }
+  
