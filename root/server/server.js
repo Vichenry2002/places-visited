@@ -5,6 +5,8 @@ const app = express();
 require("dotenv").config({ path: './config.env' });
 const cookieParser = require("cookie-parser");
 const authRoute = require("./Routes/AuthRoute");
+const userRoute = require("./Routes/UserRoute");
+const countryRoute = require("./Routes/CountryRoute");
 const { MONGO_URL, PORT } = process.env;
 
 mongoose
@@ -28,3 +30,5 @@ app.use(cookieParser());
 app.use(express.json());
 
 app.use("/", authRoute);
+app.use("/user",userRoute);
+app.use("/country",countryRoute);

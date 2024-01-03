@@ -14,6 +14,9 @@ const Home = () => {
   const [username, setUsername] = useState("");
   const [selectedCountry, setSelectedCountry] = useState('');
   const [selectedContinent, setSelectedContinent] = useState('');
+  const [visitedCountries, setVisitedCountries] = useState([]);
+  const [wishlistedCountries, setWishlistedCountries] = useState([]);
+
   const continents = [
     { name: "World", id: "world" },
     { name: "Africa", id: "africa" },
@@ -68,7 +71,20 @@ const Home = () => {
         : (removeCookie("token"), navigate("/login"));
     };
     verifyCookie();
-  }, [cookies, navigate, removeCookie]);
+
+    const fetchData = async () => {
+      try {
+        const visitedResponse = await axios.get(`http://localhost:4000/user/visited/test111`);
+        const wishlistResponse = await axios.get(`http://localhost:4000/user/wishlisted/test111`);
+
+        setVisitedCountries(visitedResponse.data.visited);
+        setWishlistedCountries(wishlistResponse.data.visited);
+      } catch (error) {
+        console.error('Error fetching data:', error);
+      }
+    }
+    fetchData();
+  }, [username, cookies, navigate, removeCookie]);
 
   const Logout = () => {
     removeCookie("token");
@@ -80,14 +96,14 @@ const Home = () => {
     <>
       <div className="home_page">
         <div className="header">
-          <img src="/favicon.png" alt="Logo" className="form-logo" />
+          <img src="/favicon.png" alt="Logo" className="logo" />
           <h4>Welcome <span>{username}</span></h4>
           <button onClick={Logout}>LOGOUT</button>
         </div>
 
         <div className="main-content">
           <div className="map-section">
-            <Map ref={mapRef} onCountryClick={handleCountryClick} />
+            <Map ref={mapRef} onCountryClick={handleCountryClick} visitedCountries={visitedCountries} wishlistedCountries={wishlistedCountries}/>
             <div className="continent-buttons">
               {continents.map((continent) => (
                 <button
@@ -102,7 +118,7 @@ const Home = () => {
           </div>
           <div className="list-section">
             {selectedCountry 
-              ? <Country name={selectedCountry} />
+              ? <Country name={selectedCountry} visitedCountries={visitedCountries} wishlistedCountries={wishlistedCountries}/>
               : <Continent name={selectedContinent} />}
           </div>
         </div>

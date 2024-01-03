@@ -4,7 +4,7 @@ import * as am4maps from "@amcharts/amcharts4/maps";
 import am4geodata_worldLow from "@amcharts/amcharts4-geodata/worldLow";
 import React, { useEffect, useRef, useImperativeHandle, forwardRef } from "react";
 
-const Map = forwardRef(({ onCountryClick }, ref) => {
+const Map = forwardRef(({ onCountryClick, visitedCountries, wishlistedCountries }, ref) => {
   const chartRef = useRef(null);
 
   useEffect(() => {

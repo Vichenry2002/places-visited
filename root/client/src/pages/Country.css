@@ -1,0 +1,72 @@
+
+  
+  .country-container h1 {
+    color: #333;
+    font-size: 5px !important;
+
+  }
+  .country-container > div:first-child {
+    margin-bottom: -30px; /* Adjust this value as needed */
+  }
+  
+  .info{
+    max-height: 300px;
+    min-height: 300px;
+    font-size: medium !important;
+    margin-top: 10px;
+  }
+
+  select {
+    /* Reset */
+    /*appearance: none;*/
+    border: 0;
+    outline: 0;
+    font: inherit;
+    /* Personalize */
+    width: 20rem;
+    padding: 0.5rem 2rem 0.5rem 0.5rem;
+    background: var(--arrow-icon) no-repeat right 0.8em center / 1.4em,
+      linear-gradient(to left, var(--arrow-bg) 3em, var(--select-bg) 3em);
+    color: white;
+    border-radius: 0.25em;
+    box-shadow: 0 0 1em 0 rgba(0, 0, 0, 0.2);
+    cursor: pointer;
+    font-size: medium;
+  }
+
+  
+  
+  .info textarea {
+    width: 100%; /* Full width of the container */
+    height: 245px; /* Increased height, adjust as needed */
+    padding: 10px;
+    margin: 10px 0;
+    border-radius: 4px;
+    border: 1px solid #ddd;
+    resize: none; /* Disables resizing */
+    overflow-y: auto; /* Adds vertical scroll if content overflows */
+  }
+  
+  .mode-button {
+    background-color: transparent !important;
+    padding: 0px 0px !important;
+    font-size: small !important;
+    margin-top: 3px;
+  }
+
+  .mode-button:hover{
+    color: blue !important;
+    text-decoration: underline;
+    
+  }
+
+  .prompt-view{
+    font-size: medium !important;
+    margin-top: 10px;
+  }
+  .text-view{
+    margin-top: 5px;
+    font-size: small;
+  }
+
+  

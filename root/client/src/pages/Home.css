@@ -23,6 +23,8 @@
     padding: 15px;
     width: 100%;
     position: relative; 
+    margin-top: -50px;
+
   }
   
   .content {
@@ -50,10 +52,10 @@
   .list-section {
     margin-left: 10px;
     right: 0;
-    min-width: 375px;
-    max-width: 375px;
-    /* min-height and max-height can be used similarly */
+    width: 375px;
+    height: 620px;
     overflow: auto;
+    /* min-height and max-height can be used similarly */
   }
   
   .home_page button {
@@ -72,7 +74,7 @@
   }
 
   .continent-buttons {
-    margin-top: 10px;
+    margin-top: 20px;
     padding: 0rem 0rem !important;
     display: flex;
     flex-wrap: wrap;
@@ -102,3 +104,10 @@
     height: auto;
   }
   
+  .logo {
+    align-items: center;
+    width: 100px; /* adjust as needed */
+    height: auto;
+    margin-bottom: -20px; 
+    margin-top: -20px; 
+  }

@@ -14,6 +14,18 @@ const userSchema = new mongoose.Schema({
     type: Date,
     default: new Date(),
   },
+  visited: [
+    {
+      country: { type: String, required: true },
+      id: { type: String, required: true }
+    }
+  ],
+  wishlist: [
+    {
+      country: { type: String, required: true },
+      id: { type: String, required: true }
+    }
+  ]
 });
 
 userSchema.pre("save", async function () {
